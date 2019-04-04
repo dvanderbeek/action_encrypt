@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  encrypted_blob: MyString
+  encrypted_blob_iv: MyString
+  record_id: 
+  record_type: MyString
+  name: MyString
+
+two:
+  encrypted_blob: MyString
+  encrypted_blob_iv: MyString
+  record_id: 
+  record_type: MyString
+  name: MyString
