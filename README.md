@@ -15,7 +15,7 @@ $ bundle
 
 Install migrations:
 ```bash
-$ rails g action_encrypt:install:migrations
+$ rails action_encrypt:install:migrations
 ```
 
 Add a key_encryption_key to your Rails encrypted credentials file. Generate
