@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 5.2"
   spec.add_dependency "attr_encrypted"
+  spec.add_dependency "blind_index"
 
   spec.add_development_dependency "pg"
 end

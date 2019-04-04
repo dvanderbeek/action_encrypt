@@ -5,14 +5,26 @@ module ActionEncrypt
     extend ActiveSupport::Concern
 
     class_methods do
+      def search_encrypted(name, opts = {})
+        blind_index :"#{name}", key: [Rails.application.credentials.blind_index_key].pack("H*")
+
+        before_validation :"compute_#{name}_bidx"
+
+        if opts[:unique] == true
+          validates :"#{name}", uniqueness: true, allow_nil: true
+        end
+      end
+
       def has_encrypted(name)
         class_eval <<-CODE, __FILE__, __LINE__ + 1
           def #{name}
             #{name}_encrypted_field.blob
           end
+
           def #{name}=(value)
             #{name}_encrypted_field.blob = value
           end
+
           def #{name}_encrypted_field
             super || build_#{name}_encrypted_field
           end
