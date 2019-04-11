@@ -3,6 +3,7 @@ PATH
   specs:
     action_encrypt (0.1.0)
       attr_encrypted
+      blind_index
       rails (~> 5.2)
 
 GEM
@@ -52,6 +53,8 @@ GEM
     arel (9.0.0)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
+    blind_index (0.3.4)
+      activesupport (>= 4.2)
     builder (3.2.3)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
