@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ["David Van Der Beek"]
   spec.email       = ["earlynovrock@gmail.com"]
   spec.summary     = "Easily add encrypted fields to your models."
+  spec.homepage    = "https://github.com/dvanderbeek/action_encrypt"
   spec.license     = "MIT"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
