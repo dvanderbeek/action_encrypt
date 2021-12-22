@@ -18,10 +18,14 @@ Install migrations:
 $ rails action_encrypt:install:migrations
 ```
 
-Add a key_encryption_key to your Rails encrypted credentials file. Generate
-one using `SecureRandom.hex(32)`
-```yml
-key_encryption_key: <<key>>
+Create `action_encrypt.rb` in your initializers folder and set encryption keys. Generate them
+using `SecureRandom.hex(32)`. You can decide between storing the values in ENV or using rails encrypted credentials system.
+
+```ruby
+ActionEncrypt.configure do |config|
+  config.key_encryption_key = ENV.fetch('KEY_ENCRYPTION_KEY')
+  config.blind_index_key = ENV.fetch('BLIND_INDEX_KEY')
+end
 ```
 
 Create a Data Encryption Key

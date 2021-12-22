@@ -8,7 +8,7 @@ module ActionEncrypt
       def search_encrypted(name, opts = {})
         require 'blind_index'
 
-        blind_index :"#{name}", key: [Rails.application.credentials.blind_index_key].pack("H*")
+        blind_index :"#{name}", key: [ActionEncrypt.configuration.blind_index_key].pack("H*")
 
         before_validation :"compute_#{name}_bidx"
 
