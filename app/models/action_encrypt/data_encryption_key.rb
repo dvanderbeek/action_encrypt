@@ -10,7 +10,7 @@ module ActionEncrypt
     end
 
     def encryption_key
-      [Rails.application.credentials.key_encryption_key].pack("H*")
+      [ActionEncrypt.configuration.key_encryption_key].pack("H*")
     end
 
     def promote!
