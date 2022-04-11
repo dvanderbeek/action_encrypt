@@ -11,7 +11,7 @@ module ActionEncrypt
 
       def encrypted_attributes
         @encrypted_attributes ||= begin
-          duplicated= {}
+          duplicated = {}
           self.class.encrypted_attributes.map { |key, value| duplicated[key] = value.dup }
           duplicated
         end
